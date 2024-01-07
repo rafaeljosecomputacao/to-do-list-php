@@ -1,0 +1,22 @@
+/* General */
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    transition: .3s;
+}
+
+list {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;;
+    transition: .5s;
+}
