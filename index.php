@@ -1,4 +1,5 @@
 <?php
+    include_once("database/connection-database.php");
     include_once("templates/header.php");
 ?>
     <h1>Index</h1>
