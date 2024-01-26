@@ -1,5 +1,5 @@
 <?php
-    include_once("database/connection-database.php");
+    require_once("database/connection-database.php");
     include_once("templates/header.php");
 ?>
     <!-- Main -->
@@ -29,7 +29,7 @@
                 </div>
                 <form action="" class="to-do-form task-form hidden">
                     <input type="text" name="description" placeholder="Edit your task here">
-                    <button type="submit" class="form-button update-button">
+                    <button type="submit" class="form-button confirm-button">
                         <i class="bi bi-check"></i>
                     </button>
                 </form>

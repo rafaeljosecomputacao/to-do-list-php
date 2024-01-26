@@ -2,7 +2,7 @@
 :root {
     --background: #1F1F1F;
     --text: #292929;
-    --placeholder: #525252;
+    --placeholder: #707070;
     --border: #B8B8B8;
     --task: #E0E0E0;
     --input: #EBEBEB;
@@ -49,7 +49,8 @@ body {
     color: var(--create);
 }
 
-.update-button {
+.update-button,
+.confirm-button {
     color: var(--update);
 }
 
@@ -65,6 +66,7 @@ body {
     flex-direction: column;
     width: 400px;
     padding: 1rem;
+    border-radius: 5px;
 }
 
 /* Header */
@@ -123,7 +125,7 @@ body {
 
 .to-do-task input[type=checkbox] {
     background-color: var(--checkbox);
-    border: 1px solid var(--read);
+    border: 1px solid var(--text);
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -133,11 +135,16 @@ body {
 }
 
 .to-do-task input[type=checkbox]:checked {
-    background: var(--read) url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") .5px 2px no-repeat; 
+    background: var(--text) url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") .5px 2px no-repeat; 
 }
 
 .task-progress {
     margin-right: .5rem;
+}
+
+.task-progress.done + .task-description {
+    text-decoration: line-through;
+    color: var(--placeholder);
 }
 
 .task-description {
@@ -153,10 +160,17 @@ body {
 
 .task-form {
     background-color: transparent;
+    height: 38px;
+}
+
+.confirm-button i {
+    display: block;
+    height: 38px;
+    margin-top: -10px;
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 /* Footer */
@@ -168,15 +182,15 @@ body {
 }
 
 .to-do-footer img {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
 }
 
 .to-do-footer p {
     color: var(--text);
-    font-size: .9rem;
-    font-weight: 700;
-    margin-left: 1rem;
+    font-size: .8rem;
+    font-weight: 400;
+    margin-left: .5rem;
 }
 
 /* Responsive */
