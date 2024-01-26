@@ -1,0 +1,21 @@
+Create database:
+CREATE DATABASE todolistdb;
+
+Use database:
+USE todolistdb;
+
+Create table:
+CREATE TABLE task(
+	id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  	description VARCHAR(100) NOT NULL,
+    completed TINYINT DEFAULT 0
+);
+
+Insert initial data:
+INSERT INTO task (description) VALUES ("Study JavaScript");
+INSERT INTO task (description) VALUES ("Pay for internet");
+INSERT INTO task (description) VALUES ("Buy tickets");
+INSERT INTO task (description) VALUES ("Listen to music");
+
+Update data:
+UPDATE task SET completed = 1 WHERE id = 2;
