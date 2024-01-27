@@ -8,6 +8,7 @@
     --input: #EBEBEB;
     --container: #F5F5F5; 
     --checkbox: #FFFFFF;
+    --logo: #a36cf2;
     --create: #28A428;
     --read: #1E90FF;
     --update: #FFA500;
@@ -186,11 +187,20 @@ body {
     height: 32px;
 }
 
+.to-do-footer p,
+.to-do-footer span {
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
 .to-do-footer p {
     color: var(--text);
-    font-size: .8rem;
-    font-weight: 400;
     margin-left: .5rem;
+}
+
+.to-do-footer span {
+    color: var(--logo);
 }
 
 /* Responsive */

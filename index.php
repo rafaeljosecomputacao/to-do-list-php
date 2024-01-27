@@ -1,5 +1,5 @@
 <?php
-    require_once("database/connection-database.php");
+    require_once("database/read.php");
     include_once("templates/header.php");
 ?>
     <!-- Main -->
@@ -16,29 +16,31 @@
         </section>
         <!-- List -->
         <section class="to-do-list">
-            <div class="to-do-task">
-                <input type="checkbox" name="progress" class="task-progress">
-                <p class="task-description">My task one</p>
-                <div class="task-actions">
-                    <button type="submit" class="action-button update-button">
-                        <i class="bi bi-pen"></i>
-                    </button>
-                    <button type="submit" class="action-button delete-button">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                </div>
-                <form action="" class="to-do-form task-form hidden">
-                    <input type="text" name="description" placeholder="Edit your task here">
-                    <button type="submit" class="form-button confirm-button">
-                        <i class="bi bi-check"></i>
-                    </button>
-                </form>
-            </div>         
+            <?php foreach($tasks as $task): ?>
+                <div class="to-do-task">
+                    <input type="checkbox" name="progress" class="task-progress" <?= $task['completed'] ? 'checked' : '' ?>>
+                    <p class="task-description"><?= $task['description'] ?></p>
+                    <div class="task-actions">
+                        <button type="submit" class="action-button update-button">
+                            <i class="bi bi-pen"></i>
+                        </button>
+                        <button type="submit" class="action-button delete-button">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                    <form action="" class="to-do-form task-form hidden">
+                        <input type="text" name="description" placeholder="Edit your task here">
+                        <button type="submit" class="form-button confirm-button">
+                            <i class="bi bi-check"></i>
+                        </button>
+                    </form>
+                </div> 
+            <?php endforeach ?>        
         </section>
         <!-- Footer -->
         <section class="to-do-footer">
             <img src="img/logo.png" alt="Logo">
-            <p>My tasks</p>
+            <p>My <span>tasks</span></p>
         </section>    
     </main>
 <?php
