@@ -1,5 +1,6 @@
 <?php
-    require_once("database/read.php");
+    require_once("database/create.php");
+    require_once("database/read.php"); 
     include_once("templates/header.php");
 ?>
     <!-- Main -->
@@ -7,7 +8,7 @@
         <!-- Header -->
         <section class="to-do-header">
             <h1>Things to do</h1>
-            <form action="" class="to-do-form">
+            <form action="database/create.php" method="POST" class="to-do-form">
                 <input type="text" name="description" placeholder="Write your task here" required>
                 <button type="submit" class="form-button create-button">
                     <i class="bi bi-plus"></i>
