@@ -30,8 +30,9 @@
                             </button>
                         </a>                          
                     </div>
-                    <form action="" class="to-do-form task-form hidden">
-                        <input type="text" name="description" placeholder="Edit your task here">
+                    <form action="database/update.php" method="POST" class="to-do-form task-form hidden">
+                        <input type="hidden" name="id" value="<?= $task['id'] ?>">
+                        <input type="text" name="description" placeholder="Edit your task here" value="<?= $task['description'] ?>">
                         <button type="submit" class="form-button confirm-button">
                             <i class="bi bi-check"></i>
                         </button>

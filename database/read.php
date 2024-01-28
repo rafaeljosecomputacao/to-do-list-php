@@ -7,7 +7,7 @@
     if ($method === "GET") {
         $tasks = [];
 
-        $tasksQuery = $connection->query("SELECT * FROM task");
+        $tasksQuery = $connection->query("SELECT * FROM task ORDER BY id ASC");
         
         $tasks = $tasksQuery->fetchAll(PDO::FETCH_ASSOC);
     }
