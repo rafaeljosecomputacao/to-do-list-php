@@ -16,10 +16,10 @@
             $tasksQuery->bindValue(':description', $description);
             
             $tasksQuery->execute();
-
-            // Returns to the previous page
-            header("Location: ..");
-            exit; 
         }
+
+        // Returns to the previous page
+        header("Location: ..");
+        exit; 
     }  
 ?>

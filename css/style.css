@@ -216,4 +216,13 @@ body {
     .to-do-container {
         width: 300px;
     }
+
+    /* List */
+    .to-do-task input[type=checkbox] {
+        width: 20px;
+    }
+
+    .to-do-task input[type=checkbox]:checked {
+        background: var(--text) url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 1px 2px no-repeat; 
+    }
 }

@@ -1,6 +1,5 @@
 <?php
-    require_once("database/create.php");
-    require_once("database/read.php"); 
+    require_once("database/read.php");
     include_once("templates/header.php");
 ?>
     <!-- Main -->
@@ -25,9 +24,11 @@
                         <button type="submit" class="action-button update-button">
                             <i class="bi bi-pen"></i>
                         </button>
-                        <button type="submit" class="action-button delete-button">
-                            <i class="bi bi-trash"></i>
-                        </button>
+                        <a href="database/delete.php?id=<?= $task['id'] ?>">
+                            <button type="button" class="action-button delete-button">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </a>                          
                     </div>
                     <form action="" class="to-do-form task-form hidden">
                         <input type="text" name="description" placeholder="Edit your task here">
