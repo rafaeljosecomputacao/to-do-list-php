@@ -7,7 +7,6 @@
     --task: #E0E0E0;
     --input: #EBEBEB;
     --container: #F5F5F5; 
-    --checkbox: #FFFFFF;
     --logo: #a36cf2;
     --create: #28A428;
     --read: #1E90FF;
@@ -114,6 +113,13 @@ body {
     overflow: auto;
 }
 
+.to-do-empty {
+    color: var(--placeholder);
+    font-size: .9rem;
+    text-align: center;
+    margin-top: .5rem;
+}
+
 .to-do-task {
     display: flex;
     align-items: center;
@@ -122,30 +128,6 @@ body {
     border-left: 4px solid var(--read);
     padding: .5rem;
     margin-top: .5rem;
-}
-
-.to-do-task input[type=checkbox] {
-    background-color: var(--checkbox);
-    border: 1px solid var(--text);
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    width: 18px;
-    height: 16px;
-    cursor: pointer; 
-}
-
-.to-do-task input[type=checkbox]:checked {
-    background: var(--text) url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") .5px 2px no-repeat; 
-}
-
-.task-progress {
-    margin-right: .5rem;
-}
-
-.task-progress.done + .task-description {
-    text-decoration: line-through;
-    color: var(--placeholder);
 }
 
 .task-description {
@@ -215,14 +197,5 @@ body {
     /* Main */
     .to-do-container {
         width: 300px;
-    }
-
-    /* List */
-    .to-do-task input[type=checkbox] {
-        width: 20px;
-    }
-
-    .to-do-task input[type=checkbox]:checked {
-        background: var(--text) url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 1px 2px no-repeat; 
     }
 }

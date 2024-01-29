@@ -15,30 +15,33 @@
             </form>
         </section>
         <!-- List -->
-        <section class="to-do-list">
-            <?php foreach($tasks as $task): ?>
-                <div class="to-do-task">
-                    <input type="checkbox" name="progress" class="task-progress" <?= $task['completed'] ? 'checked' : '' ?>>
-                    <p class="task-description"><?= $task['description'] ?></p>
-                    <div class="task-actions">
-                        <button type="submit" class="action-button update-button">
-                            <i class="bi bi-pen"></i>
-                        </button>
-                        <a href="database/delete.php?id=<?= $task['id'] ?>">
-                            <button type="button" class="action-button delete-button">
-                                <i class="bi bi-trash"></i>
+        <section class="to-do-list">  
+            <?php if($tasksQuery->rowCount() == 0): ?> 
+                <p class="to-do-empty">Empty list</p>
+            <?php else: ?>    
+                <?php foreach($tasks as $task): ?>         
+                    <div class="to-do-task">
+                        <p class="task-description"><?= $task['description'] ?></p>   
+                        <div class="task-actions">
+                            <button type="submit" class="action-button update-button">
+                                <i class="bi bi-pen"></i>
                             </button>
-                        </a>                          
+                            <a href="database/delete.php?id=<?= $task['id'] ?>">
+                                <button type="button" class="action-button delete-button">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </a>                          
+                        </div>
+                        <form action="database/update.php" method="POST" class="to-do-form task-form hidden">
+                            <input type="hidden" name="id" value="<?= $task['id'] ?>">
+                            <input type="text" name="description" placeholder="Edit your task here" value="<?= $task['description'] ?>">
+                            <button type="submit" class="form-button confirm-button">
+                                <i class="bi bi-check"></i>
+                            </button>
+                        </form>
                     </div>
-                    <form action="database/update.php" method="POST" class="to-do-form task-form hidden">
-                        <input type="hidden" name="id" value="<?= $task['id'] ?>">
-                        <input type="text" name="description" placeholder="Edit your task here" value="<?= $task['description'] ?>">
-                        <button type="submit" class="form-button confirm-button">
-                            <i class="bi bi-check"></i>
-                        </button>
-                    </form>
-                </div> 
-            <?php endforeach ?>        
+                <?php endforeach ?>
+            <?php endif; ?>               
         </section>
         <!-- Footer -->
         <section class="to-do-footer">
